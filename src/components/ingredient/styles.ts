@@ -1,5 +1,5 @@
-import {StyleSheet} from "react-native";
-import {theme} from '@/theme'
+import { StyleSheet } from "react-native";
+import { theme } from '@/theme';
 
 export const styles = StyleSheet.create({
     container:{
@@ -9,12 +9,16 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 16,
         height: 42,
         alignItems: 'center',
-        flexDirection:'row',
-        gap: 6
-        
-    },
-    image:{
+        flexDirection: 'row',
+        gap: 6,
+    }, 
+    image: {
         width: 16,
-        height:16,
+        height: 16,
+    },
+    selected:{
+        borderWidth: 2,
+        borderColor: theme.colors.green_600,
+        backgroundColor: theme.colors.green_100,
     }
 })

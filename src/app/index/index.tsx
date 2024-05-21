@@ -1,11 +1,29 @@
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, Alert} from 'react-native';
 import {styles} from './styles';
 import { Ingredient} from '@/components/ingredient';
+import { Selected } from '@/components/selected';
+import { useState } from 'react'
+
 
 export default function Home(){
-    function handleToggleSelected(){
-
+    const [selected, setSelected]=useState<string[]>([]);
+    function handleToggleSelected(value: string){
+        console.log(value)
+        if(selected.includes(value)){
+            return setSelected((state) => state.filter((item) => item !== value))
+        }
+        
+        setSelected((state) => [...state, value])
+        // console.log(selected);
     }
+
+   function handleClearSelected(){
+    Alert.alert("Limpar", "Deseja limpar tudo",[{text:"Não", style:"cancel"},{text:"Sim", onPress: () => setSelected([])},])
+
+ 
+
+   }
+    
     return(
         <View style={styles.container}>
         <Text style={styles.title}> Escolha {"\n"}
@@ -15,12 +33,13 @@ export default function Home(){
         </Text>
         {/* <Ingredient /> */}
         <ScrollView contentContainerStyle={styles.ingredients} showsVerticalScrollIndicator={false}>
-        {Array.from({length:100}).map((item , index) =>(<Ingredient key={index} name="Maça" image="" selected={false} 
-        onPress={() => handleToggleSelected}/> ))}
+        {Array.from({length:100}).map((item , index) =>(<Ingredient key={index} name="Maça" image="" selected={selected.includes(String(index))} 
+        onPress={() => handleToggleSelected(String(index))}/> ))}
+
         </ScrollView>
-
-
-
+        {selected.length > 0 &&
+        <Selected  quantity={selected.length} onClear={handleClearSelected} onSearch={()=>{}}/>
+        }
         </View>
     )
 }
