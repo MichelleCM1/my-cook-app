@@ -17,8 +17,11 @@ export function Ingredient({
 }: ingredientsProps & PressableProps){
     return(
         <Pressable style={[styles.container,selected && styles.selected]} {... rest}>
-            <Image source={require("@/assets/apple.png")} style={styles.image} />
-            <Text> Maça</Text>
+           <Image 
+                source={ {uri: image }} 
+                style={styles.image} 
+            />
+            <Text>{name}</Text>
         </Pressable>
     )
 }

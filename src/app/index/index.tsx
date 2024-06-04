@@ -2,7 +2,8 @@ import {View, Text, ScrollView, Alert} from 'react-native';
 import {styles} from './styles';
 import { Ingredient} from '@/components/ingredient';
 import { Selected } from '@/components/selected';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { router } from 'expo-router';
 
 
 export default function Home(){
@@ -23,6 +24,23 @@ export default function Home(){
  
 
    }
+ function handleSearch(){
+    router.navigate("/recipes/")
+ }
+
+
+
+
+   useEffect(() => {
+    services.ingredients.findAll().then(setIngredients)
+    console.log(ingredients)
+}, [])
+
+
+
+
+
+
     
     return(
         <View style={styles.container}>
@@ -38,7 +56,7 @@ export default function Home(){
 
         </ScrollView>
         {selected.length > 0 &&
-        <Selected  quantity={selected.length} onClear={handleClearSelected} onSearch={()=>{}}/>
+        <Selected  quantity={selected.length} onClear={handleClearSelected} onSearch={handleSearch}/>
         }
         </View>
     )
