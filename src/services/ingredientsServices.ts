@@ -18,7 +18,7 @@ async function findByIds(ids: string[]){
         .order("name")
         .returns<IngredientResponse[]>()
     
-    return data ?? [];
+    return data ?? []
 }
 
 export { findAll, findByIds }
