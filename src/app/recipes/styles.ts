@@ -17,16 +17,9 @@ export const styles = StyleSheet.create({
         paddingLeft:10,
     },
     recipes:{
-<<<<<<< HEAD
         padding: 32
     },
     recipesContent:{
         gap: 16
-=======
-        padding:32
-    },
-    recipesContent:{
-        gap:16
->>>>>>> 4e05fc18f84c9d4db48de1f6c75e23b25b7decf7
     }
 })
