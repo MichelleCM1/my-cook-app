@@ -63,17 +63,6 @@ export default function Home() {
     )
 }
 
-<<<<<<< HEAD
-
-
-{/* {Array.from( {length:100} ).map( (item, index) => (
-    <Ingredient key={index}  
-        name="Maça" image="" 
-        selected={selected.includes(String(index))}
-        onPress={() => handleToggleSelected(String(index))}
-    />
-))} */}
-=======
 // {Array.from( {length:100} ).map( (item, index) => (
 //     <Ingredient key={index}  
 //         name="Maça" image="" 
@@ -81,4 +70,3 @@ export default function Home() {
 //         onPress={() => handleToggleSelected(String(index))}
 //     />
 // ))}
->>>>>>> 4e05fc18f84c9d4db48de1f6c75e23b25b7decf7
