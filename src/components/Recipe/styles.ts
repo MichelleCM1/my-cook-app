@@ -4,21 +4,21 @@ import { theme } from '@/theme';
 export const styles = StyleSheet.create({
     container:{
         flex:1,
-        height: 192,
+        height:192,
         borderRadius: theme.borderRadius.lg,
         overflow: "hidden",
-    }, 
+    },
     image:{
-        flex:1,
+        flex: 1,
     },
     linear:{
-        flex:1,
-        padding:12,
+        flex: 1,
+        padding: 12,
         justifyContent: "flex-end",
     },
     title:{
-        color:theme.colors.white,
-        fontSize:theme.fonts.size.body.sm,
+        color: theme.colors.white,
+        fontSize: theme.fonts.size.body.sm,
         fontFamily: theme.fonts.family.bold
     },
     minutes:{
