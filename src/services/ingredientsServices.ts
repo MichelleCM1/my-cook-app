@@ -12,6 +12,7 @@ async function findAll() {
 
 async function findByIds(ids: string[]){
     const { data } = await supabase
+<<<<<<< HEAD
     .from("ingredients")
     .select()
     .in("id", ids)
@@ -19,6 +20,15 @@ async function findByIds(ids: string[]){
     .returns<IngredientResponse[]>()
 
     return data??[]
+=======
+        .from("ingredients")
+        .select()
+        .in("id", ids)
+        .order("name")
+        .returns<IngredientResponse[]>()
+    
+    return data ?? []
+>>>>>>> 4e05fc18f84c9d4db48de1f6c75e23b25b7decf7
 }
 
 async function findByRecipeId(id: string){
