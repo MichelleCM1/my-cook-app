@@ -1,4 +1,4 @@
-import * as ingredients from './ingredientsServices'
+import * as ingredients from "./ingredientsServices"
 import * as recipes from "./recipeService"
 import * as preparations from "./preparationsServices"
 
